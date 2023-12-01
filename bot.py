@@ -5,13 +5,13 @@ from bored.main import Bored
 
 
 welcome_msg = '''
-Hello there!
+<b>Hello there!</b>
 
 🌟 Welcome to the Random Advice Bot! 🌟
 
 Get ready to receive a dose of wisdom and guidance tailored just for you. Here's a quick guide on how to make the most out of this bot:
 
-1. /start: Use this command to receive a warm welcome message and get instructions on how to interact with the bot.
+1. <b>/start:</b> Use this command to receive a warm welcome message and get instructions on how to interact with the bot.
 
 2. /random: Feeling spontaneous? Use this command for a random piece of advice that might just be what you need at the moment.
 
@@ -58,6 +58,7 @@ def send_message(url: str, chat_id: int, text: str):
     payload = {
         'chat_id': chat_id,
         'text': text,
+        'parse_mode': 'HTML'
     }
     requests.get(url, params=payload)
 
