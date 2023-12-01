@@ -73,7 +73,7 @@ def main(url: str):
             text = curr_update['message'].get('text')
 
             if text is None:
-                pass
+                send_message(url, user['id'], 'send text message')
             elif text == '/start':
                 send_message(url, user['id'], welcome_msg)
             elif text == '/random':
