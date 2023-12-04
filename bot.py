@@ -5,33 +5,32 @@ from bored.main import Bored
 
 
 welcome_msg = '''
-<b>Hello there!</b>
+<b>Assalomu alaykum aziz qadirdonim !</b>
 
-🌟 Welcome to the Random Advice Bot! 🌟
+🌟 Tasodifiy maslahat Kom_IT_Auto Bot-ga xush kelibsiz! 🌟
 
-Get ready to receive a dose of wisdom and guidance tailored just for you. Here's a quick guide on how to make the most out of this bot:
+Siz uchun faqat donolik va ko'rsatmalar dozasini olishga tayyor bo'ling. Mana bu botdan maksimal darajada foydalanish bo'yicha tezkor qo'llanma:
+1. <b>/start:</b> Issiq kutib olish xabarini olish va bot bilan qanday aloqa qilish bo'yicha ko'rsatmalar olish uchun ushbu buyruqdan foydalaning.
 
-1. <b>/start:</b> Use this command to receive a warm welcome message and get instructions on how to interact with the bot.
+2. <b>/random:</b> O'z-o'zidan his qilyapsizmi? Ushbu buyruqni hozirda sizga kerak bo'lgan narsa bo'lishi mumkin bo'lgan tasodifiy maslahat uchun foydalaning.
 
-2. /random: Feeling spontaneous? Use this command for a random piece of advice that might just be what you need at the moment.
+3. <b>/sport:</b> Sport bilan bog'liq maslahatlar kerakmi? Ushbu buyruqni kiriting va Bot sizga sport bilan bog'liq donolikka xizmat qiladi.
 
-3. /sport: Need advice related to sports? Type this command, and let the bot serve you some sports-related wisdom.
+4. <b>/education:</b> Agar siz ta'lim masalalariga rahbarlik qilmoqchi bo'lsangiz, ushbu buyruqdan qimmatbaho maslahat olish uchun foydalaning.
 
-4. /education: If you're seeking guidance on matters of education, use this command to receive valuable advice.
+5. <b>/recreational:</b> Bo'sh vaqt va dam olish faoliyatida maslahatlar uchun bu buyruqni kiriting va ba'zi bir fikrli takliflardan zavqlaning.
 
-5. /recreational: For advice on leisure and recreational activities, simply type this command and enjoy some thoughtful suggestions.
+6. <b>/social:</b>Ijtimoiy munosabatlar bo'yicha maslahatlarni qidiryapsizmi? Ijtimoiy tajribangizni oshiradigan maslahatlarni olish uchun ushbu buyruqdan foydalaning.
 
-6. /social: Looking for tips on social interactions? Use this command to receive advice that could enhance your social experiences.
+7. <b>/diy:</b>DIY loyihasini rejalashtirish? O'zingizning harakatlaringiz uchun foydali maslahatlarni olish uchun ushbu buyruqni kiriting.
 
-7. /diy: Planning a DIY project? Type this command to get some helpful advice for your do-it-yourself endeavors.
+8. <b>/cooking:</b> Mazali taomni qamchilashga tayyormisiz? Ovqat pishirish uchun ushbu buyruqdan ham yaxshi tajribangizni yanada yaxshiroq qiladi.
 
-8. /cooking: Ready to whip up a delicious meal? Use this command for cooking advice that might just make your culinary experience even better.
+9. <b>/relaxation:</b>Stressni his qilyapsizmi? Sizga yoqishga yordam beradigan dam olish usullari bo'yicha maslahat uchun ushbu buyruqni kiriting.
 
-9. /relaxation: Feeling stressed? Type this command for advice on relaxation techniques that could help you unwind.
+10. <b>/busywork:</b>O'zingizni ishg'ol qilish uchun biror narsa kerakmi? Ushbu buyruqni samarali va vazifalarni bajarish bo'yicha maslahatlar uchun foydalaning.
 
-10. /busywork: Need something to keep yourself occupied? Use this command for advice on productive and engaging tasks.
-
-Remember, if you enter any other text, the bot will provide an error message to guide you back to the available commands.
+Yodingizda bo'lsin, agar siz boshqa biron bir matnni kiritsangiz, bot sizni mavjud buyruqlarga qaytarish uchun xato xabarini beradi.
 '''
 
 
@@ -82,6 +81,24 @@ def main(url: str):
                 send_message(url, user['id'], advice)
             elif text == '/education':
                 advice = bored.get_activity_by_type('education')['activity']
+                send_message(url, user['id'], advice)
+            elif text == '/recreational':
+                advice = bored.get_activity_by_type('recreational')['activity']
+                send_message(url, user['id'], advice)
+            elif text == '/social':
+                advice = bored.get_activity_by_type('social')['activity']
+                send_message(url, user['id'], advice)
+            elif text == '/diy':
+                advice = bored.get_activity_by_type('diy')['activity']
+                send_message(url, user['id'], advice)
+            elif text == '/cooking':
+                advice = bored.get_activity_by_type('cooking')['activity']
+                send_message(url, user['id'], advice)
+            elif text == '/relaxation':
+                advice = bored.get_activity_by_type('relaxation')['activity']
+                send_message(url, user['id'], advice)
+            elif text == '/busywork':
+                advice = bored.get_activity_by_type('busywork')['activity']
                 send_message(url, user['id'], advice)
             else:
                 send_message(url, user['id'], 'error message')
